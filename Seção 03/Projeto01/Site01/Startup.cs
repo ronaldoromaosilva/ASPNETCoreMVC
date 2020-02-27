@@ -15,6 +15,7 @@ namespace Site01
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,12 +26,22 @@ namespace Site01
                 app.UseDeveloperExceptionPage();
             }
 
+            /**
+            * www.site.com.br/cliente/lista (Página com Listagem Clientes)
+            * www.site.com.br/cliente/deletar/30 
+            * www.site.com.br/cliente/visualizar/30 
+            * www.site.com.br/noticia/visualizar/acidentes-de-carro-nas-rodovias
+            * {dominio}/{controller=Home}/{Action=Index}/{id?} no id tbm pode ser nome e existe alguns valores padrão
+            */
             app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
 
+            /*
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+            */
         }
     }
 }

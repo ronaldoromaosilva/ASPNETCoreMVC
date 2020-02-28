@@ -10,8 +10,11 @@ namespace Site01.Controllers
     {
         public ActionResult Index()
         {
-            
-            return new ContentResult() { Content = "Olá Mundo!", ContentType = "text/json" };
+
+            // return new ContentResult() { Content = "Olá Mundo!", ContentType = "text/json" };
+            return View();
+
+        
         }
     }
 }

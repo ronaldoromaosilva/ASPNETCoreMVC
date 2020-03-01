@@ -16,9 +16,28 @@ namespace Site01.Controllers
 
         public IActionResult ReceberContato([FromForm]Contato contato)
         {
-            string conteudo = string.Format("Nome: {0}, E-mail: {1}, Assunto: {2}, Mensagem: {3}", contato.Nome, contato.Email, contato.Assunto, contato.Mensagem);
 
-            return new ContentResult() { Content = conteudo };
+            if (ModelState.IsValid)
+            {
+                // Entra - Passou na validação
+                string conteudo = string.Format("Nome: {0}, E-mail: {1}, Assunto: {2}, Mensagem: {3}", contato.Nome, contato.Email, contato.Assunto, contato.Mensagem);
+
+                return new ContentResult() { Content = conteudo };
+            }
+            else
+            {
+                // Não passou
+                return View("Index");
+            }
+
+            // Como usei [Required] em Contato.cs por conta do using System.ComponentModel.DataAnnotations; não precisei validar
+            /* if (contato.Nome.Length <= 0)
+             {
+                //aqui poderia colocar uma mensagem caso não usasse o using System.ComponentModel.DataAnnotations;
+
+             }
+             */
+            
         }
 
         /* Obter dados Manualmente

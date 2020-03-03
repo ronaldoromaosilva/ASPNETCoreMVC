@@ -12,6 +12,7 @@ namespace Site01.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Contato = new Contato();
             return View();
         }
 
@@ -21,9 +22,10 @@ namespace Site01.Controllers
             if (ModelState.IsValid)
             {
                 // Entra - Passou na validação
-                //string conteudo = string.Format("Nome: {0}, E-mail: {1}, Assunto: {2}, Mensagem: {3}", contato.Nome, contato.Email, contato.Assunto, contato.Mensagem);
-                //return new ContentResult() { Content = conteudo };
+                // String conteudo = string.Format("Nome: {0}, E-mail: {1}, Assunto: {2}, Mensagem: {3}", contato.Nome, contato.Email, contato.Assunto, contato.Mensagem);
+                // Return new ContentResult() { Content = conteudo };
 
+                ViewBag.Contato = new Contato(); // Existe uma outra forma, seria até mais correto
                 EnviarEmail.EnviarMensagemContato(contato);
                 ViewBag.Mensagem = "Mensagem enviada com sucesso";
                 return View("Index");
@@ -32,6 +34,7 @@ namespace Site01.Controllers
             }
             else
             {
+                ViewBag.Contato = contato;
                 // Não passou
                 return View("Index");
             }

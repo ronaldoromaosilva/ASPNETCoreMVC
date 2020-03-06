@@ -27,7 +27,7 @@ namespace Site01.Controllers
 
                 if(usuario.Email == "teste@teste.com" && usuario.Senha == "123456")
                 {
-                    return Redirect("/palavra");
+                    return RedirectToAction("Index", "Palavra");
                     //return View();
                 }
 

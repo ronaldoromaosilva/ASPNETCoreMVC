@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" value="" class="form-control" id="nome" placeholder="Digite o seu nome">
+                @Html.ValidationMessage("nome")
+            </div>
+            <div class="form-group">
+                <label for="nivel">Nível</label>
+                <input type="text" name="nivel" value="" class="form-control" id="nivel" placeholder="Digite o nível: 1 - Fácil, 2 - Médio, 3 - Difícil">
+                @Html.ValidationMessage("nivel")
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>

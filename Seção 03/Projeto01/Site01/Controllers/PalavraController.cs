@@ -30,13 +30,13 @@ namespace Site01.Controllers
         [HttpGet]
         public IActionResult Atualizar()
         {
-            return View();
+            return View("Cadastrar");
         }
 
         [HttpPost]
         public IActionResult Atualizar([FromForm]Palavra palavra)
         {
-            return View();
+            return View("Cadastrar");
         }
 
         //Palavra/Excluir/39
@@ -44,6 +44,7 @@ namespace Site01.Controllers
         [HttpGet]
         public IActionResult Excluir(int Id)
         {
+            //TODO - Excluir registro no banco
             return RedirectToAction("Index");
         }
     }

@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Palavra - Listagem</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class=" =container">
+        <a href="/palavra/cadastrar" class="btn btn-primary">Cadastrar</a>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Palavra</th>
+                    <th scope="col">Nível</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Elefante</td>
+                    <td>Fácil</td>
+                    <td>
+                        <a href="'/palavra/atualizar/1" class="btn">Editar</a>
+                        <a href="'/palavra/excluir/1" class="btn">Excluir</a>
+                    </td>
+                </tr>
+                <tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Site01.Database;
 
 namespace Site01
 {
@@ -16,6 +18,10 @@ namespace Site01
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<DatabaseContext>(options=> {
+                //Providers - Biblioteca Conexões com Bancos - SQLServcer, MYSQL, Oracle, Postgre, Firebird, DB2...
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=site01;Integrated Security=True;");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

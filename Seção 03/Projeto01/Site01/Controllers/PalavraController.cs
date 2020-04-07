@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Site01.Database;
 
 namespace Site01.Controllers
 {
     public class PalavraController : Controller
     {
+        private DatabaseContext _db;
+        public PalavraController(DatabaseContext db)
+        {
+            _db = db;
+        }
+
         //Listar todas as palavras do banco de dados
         public IActionResult Index()
         {
+            ViewBag.Palavras = _db.Palavras.ToList();
             return View();
         }
 

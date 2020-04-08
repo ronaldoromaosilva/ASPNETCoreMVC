@@ -20,7 +20,7 @@ namespace Site01
             services.AddMvc();
             services.AddDbContext<DatabaseContext>(options=> {
                 //Providers - Biblioteca Conexões com Bancos - SQLServcer, MYSQL, Oracle, Postgre, Firebird, DB2...
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=site01;Integrated Security=True;");
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=site01;Integrated Security=True;");
                 });
         }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Site01.Controllers;
+using Site01.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -20,8 +20,8 @@ namespace Site01.Controllers
         //Listar todas as palavras do banco de dados
         public IActionResult Index()
         {
-            ViewBag.Palavras = _db.Palavras.ToList();
-            return View();
+            var palavras = _db.Palavras.ToList();
+            return View(palavras);
         }
 
         //CRUD - Cadastrar, Consultar, Atualizar e Excluir. Create, Retrieve, Update, Delete - CRUD.
